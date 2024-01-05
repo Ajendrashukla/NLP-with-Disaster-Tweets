@@ -1,7 +1,6 @@
 import pickle
 import streamlit as st
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
 import emoji
