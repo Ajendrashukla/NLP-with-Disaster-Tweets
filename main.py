@@ -1,20 +1,21 @@
 import pickle
 import streamlit as st
 import re
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
+from stop_words import get_stop_words
 from nltk.tokenize import TweetTokenizer
 import emoji
 from nltk.stem import WordNetLemmatizer
 import string
 
-stop_words = set(stopwords.words('english')) 
+# stop_words = set(stopwords.words('english')) 
+stop_words = get_stop_words('en')
 tk = TweetTokenizer() 
 lemmatizer = WordNetLemmatizer()
 
 # Load the tokenizer, lemmatizer, and stop words
 tk = TweetTokenizer()
 lemmatizer = WordNetLemmatizer()
-stop_words = set(stopwords.words('english'))
 
 # Load the TF-IDF vectorizer and the model
 Tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
