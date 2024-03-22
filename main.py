@@ -1,15 +1,15 @@
 import pickle
 import streamlit as st
 import re
-# from nltk.corpus import stopwords
-from stop_words import get_stop_words
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
 import emoji
 from nltk.stem import WordNetLemmatizer
 import string
 
-# stop_words = set(stopwords.words('english')) 
-stop_words = get_stop_words('en')
+stop_words = set(stopwords.words('english')) 
 tk = TweetTokenizer() 
 lemmatizer = WordNetLemmatizer()
 
